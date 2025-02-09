@@ -199,7 +199,7 @@ const Garden = () => {
               </div>
             ) : (
               <div className="flex items-center justify-center h-full w-full">
-                <p className="text-center text-gray-400 text-xl font-smooch">
+                <p className="text-center text-gray-400 text-3xl font-smooch">
                   Upload a plant image to get detailed information.
                 </p>
               </div>
