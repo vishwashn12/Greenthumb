@@ -96,7 +96,7 @@ const LoginPage = () => {
               .then(() => navigate("/home"))
               .catch((error) => console.error("Error signing in:", error));
           }}
-          className="w-full mt-4 bg-red-500 text-white text-xl py-2 font-medium rounded-full transition-transform duration-200 hover:scale-95 hover:bg-red-600"
+          className="w-full mt-4 bg-red-500 text-white text-xl py-2 font-medium rounded-full transition-transform duration-200 hover:scale-95 hover:bg-red-600 hidden"
         >
           Sign in with Google
         </button>

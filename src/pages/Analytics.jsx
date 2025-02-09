@@ -130,7 +130,7 @@ const Analytics = () => {
             <button
               key={range}
               onClick={() => setSelectedRange(range)}
-              className={`px-4 py-2 rounded ${
+              className={`px-4 py-2 rounded hidden ${
                 selectedRange === range ? "bg-emerald-500" : "bg-gray-700"
               }`}
             >
