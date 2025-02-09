@@ -208,7 +208,9 @@ const Disease = () => {
                 </div>
               </div>
             ) : (
-              <p className="text-center text-gray-400">Upload a plant image to get detailed disease information.</p>
+              <div className="flex justify-center text-3xl items-center h-[calc(100vh-200px)]">
+                <p className="text-center text-gray-400">Upload a plant image to get detailed disease information.</p>
+              </div>
             )}
           </div>
         </div>

@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 
 const Home = () => {
   const cards = [
-    { title: 'My Garden', description: 'Learn about plants & create your E-Garden', image: plant1, link: '/garden' },
+    { title: 'Plant Identification', description: 'Learn about plants & more to know.', image: plant1, link: '/garden' },
     { title: 'Analytics', description: 'Plant moisture & temperature analytics.', image: plant2, link: '/analytics' },
     { title: 'Disease Detection', description: 'Plant disease identification and diagnosis.', image: plant3, link: '/disease-detection' },
     { title: 'Community', description: 'Community for plant enthusiasts and lovers.', image: plant6, link: '/community' },

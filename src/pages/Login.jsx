@@ -27,11 +27,11 @@ const LoginPage = () => {
   };
 
   return (
-    <div
-      className="min-h-screen flex items-start justify-start bg-cover bg-center p-0 font-smooch "
+    <div 
+      className="min-h-screen flex items-start justify-start bg-cover bg-center p-0 font-smooch  "
       style={{ backgroundImage: `url(${signinImage})` }} // Set the background image
     >
-      <div className=" p-8 rounded-lg shadow-lg w-full max-w-md ml-20">
+      <div className=" p-8 rounded-lg shadow-lg w-full max-w-md lg:ml-20 md:ml-20">
         {/* Apply typing animation to GREEN THUMB */}
         <h1 className="text-8xl font-bold mb-6 text-spotify-green">
           <span className="block overflow-hidden whitespace-nowrap animate-typing">

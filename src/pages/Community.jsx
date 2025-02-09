@@ -28,7 +28,7 @@ const Community = () => {
           postsData.map(async (post) => {
             const commentsCollection = collection(db, "overallPosts", post.id, "comments");
             const commentSnapshot = await getDocs(commentsCollection);
-            const commentsData = commentSnapshot.docs.map((doc) => doc.data());
+            const commentsData = commentSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
             return { ...post, comments: commentsData };
           })
         );
@@ -50,11 +50,29 @@ const Community = () => {
       const postRef = doc(db, "overallPosts", postId);
       const commentsCollection = collection(postRef, "comments");
 
-      await addDoc(commentsCollection, {
+      // Add the comment to Firestore
+      const commentRef = await addDoc(commentsCollection, {
         comment: commentText,
         email: currentUserEmail,
         createdAt: new Date(),
       });
+
+      // Create a new comment object
+      const newComment = {
+        id: commentRef.id, // Firestore-generated ID
+        comment: commentText,
+        email: currentUserEmail,
+        createdAt: new Date(),
+      };
+
+      // Update the local state to include the new comment
+      setPosts((prevPosts) =>
+        prevPosts.map((post) =>
+          post.id === postId
+            ? { ...post, comments: [newComment, ...post.comments] } // Add new comment at the top
+            : post
+        )
+      );
     } catch (error) {
       console.error("Error adding comment to Firestore:", error);
     }
@@ -155,8 +173,8 @@ const Community = () => {
                   <div className="mt-4 h-24 overflow-y-auto custom-scrollbar">
                     <div className="space-y-2">
                       {post.comments &&
-                        post.comments.map((comment, index) => (
-                          <div key={index} className="text-sm">
+                        post.comments.map((comment) => (
+                          <div key={comment.id} className="text-sm">
                             <span className="font-semibold">{comment.email}:</span> {comment.comment}
                           </div>
                         ))}
@@ -170,7 +188,7 @@ const Community = () => {
                       onKeyPress={(e) => {
                         if (e.key === "Enter") {
                           handleAddComment(post.id, e.target.value);
-                          e.target.value = "";
+                          e.target.value = ""; // Clear the input field
                         }
                       }}
                     />
@@ -178,7 +196,7 @@ const Community = () => {
                       onClick={(e) => {
                         const input = e.target.previousSibling;
                         handleAddComment(post.id, input.value);
-                        input.value = "";
+                        input.value = ""; // Clear the input field
                       }}
                       className="bg-green-500 text-black px-3 py-1 rounded-r-full"
                     >

@@ -119,7 +119,7 @@ const Garden = () => {
       <Navbar />
       <div className="min-h-screen w-full bg-black/55 backdrop-blur-md text-white p-8 font-mono text-sm mt-6">
         <h1 className="text-3xl md:text-5xl font-bold mb-6 text-green-500 text-center font-smooch">
-          E-Garden
+          Plant Identification
         </h1>
         <div className="flex flex-col lg:flex-row w-full gap-8">
           {/* Left Section: Image Upload and Identify Button */}
@@ -155,7 +155,7 @@ const Garden = () => {
           </div>
 
           {/* Right Section: Plant Information */}
-          <div className="w-full lg:w-3/4">
+          <div className="w-full lg:w-3/4 flex items-center justify-center">
             {plantData ? (
               <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-full">
                 <h2 className="text-3xl font-bold mb-4 text-green-500 font-smooch">
@@ -198,9 +198,11 @@ const Garden = () => {
                 </div>
               </div>
             ) : (
-              <p className="text-center text-gray-400 text-xl font-smooch w-full">
-                Upload a plant image to get detailed information.
-              </p>
+              <div className="flex items-center justify-center h-full w-full">
+                <p className="text-center text-gray-400 text-xl font-smooch">
+                  Upload a plant image to get detailed information.
+                </p>
+              </div>
             )}
           </div>
         </div>
