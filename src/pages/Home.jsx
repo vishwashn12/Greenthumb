@@ -24,7 +24,7 @@ const Home = () => {
             Grow Smarter with <p className="text-spotify-green">GREENTHUMB</p>
           </h1>
           <div className="text-sm font-mono mb-10 text-white text-center max-w-xl animate-fadeIn">
-            At Greenthumb, we’re here to support farmers with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
+            At Greenthumb, we’re here to support gardeners with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
             {cards.map((card, index) => (

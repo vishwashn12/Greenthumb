@@ -33,7 +33,7 @@ const RegisterPage = () => {
       className="min-h-screen flex items-start justify-start bg-cover bg-center p-0 parallax"
       style={{ backgroundImage: `url(${signinImage})` }} // Set the background image
     >
-      <div className="p-8 rounded-lg shadow-lg w-full max-w-md font-smooch ml-20">
+      <div className="p-8 rounded-lg shadow-lg w-full max-w-md font-smooch lg:ml-20 md:ml-20">
         {/* Apply typing animation to GREEN THUMB */}
         <h1 className="text-8xl font-bold mb-6 text-spotify-green">
           <span className="block overflow-hidden whitespace-nowrap animate-typing">
