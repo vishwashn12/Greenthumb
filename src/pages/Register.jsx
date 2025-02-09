@@ -44,7 +44,7 @@ const RegisterPage = () => {
           </span>
         </h1>
         <p className="mb-6 font-mono text-sm text-white">
-          At Greenthumb, we’re here to support farmers with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
+          At Greenthumb, we’re here to support gardeners with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
